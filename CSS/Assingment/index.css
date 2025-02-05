@@ -382,16 +382,16 @@ footer p:hover {
   }
 
   .hero-section {
-    height: 80vh;
+    height: 49vh;
     background-position: center;
   }
 
   .hero-content {
-    padding-left: 1rem;
-    padding-top: 3rem;
-    font-size: 18px;
+    padding-left: 0rem;
+    padding-top: 1rem;
+    font-size: 15px;
     text-align: center;
-    gap: 30px;
+    gap: 16px;
   }
 
   .button {
@@ -421,8 +421,9 @@ footer p:hover {
     width: 100%;
   }
   .about-img {
-    width: 16rem;
+    width: 15rem;
     margin: 20px 0;
+    height: 9rem;
   }
 
   .Contact-section {
@@ -439,5 +440,9 @@ footer p:hover {
   .contact-btn {
     padding: 10px;
     font-size: 14px;
+  }
+
+  footer{
+    text-align: center;
   }
 }
