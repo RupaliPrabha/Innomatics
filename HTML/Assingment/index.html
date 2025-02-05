@@ -22,7 +22,7 @@
         </section>
         <section>
             <h2>Add New Income or Expenses</h2>
-            <form action="./Assingment_1.html">
+            <form >
                 <div>
                     <label for="amount">Amount: </label><input type="number" id="amount" required>
                 </div><br>
@@ -42,17 +42,17 @@
                     <label for="description">Description: </label><input type="text" id="description">
                 </div><br>
                 <div>
-                    <label>Date: </label><input type="date">
+                    <label for="date">Date: </label><input id="date" type="date" required>
                 </div><br>
                 <div>
-                    <label>Type: </label> <input name="income/expenses" type="radio">Income<input name="income/expenses" type="radio">Expenses
+                    <label>Type: </label> <input name="type" type="radio">Income<input  name="type" type="radio">Expenses
                 </div><br>
-                <button type="submit">Add Entry</button>
+                <button href="#table" type="submit">Add Entry</button>
             </form>
         </section>
         <section>
             <h2>Budget Summary</h2>
-            <table border="1">
+            <table id="table"  border="1">
                 <thead>
                     <tr>
                         <th rowspan="2">Category</th>
@@ -67,7 +67,7 @@
                         <th>Type</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody >
                     <tr>
                         <td>Food</td>
                         <td>$200</td>
