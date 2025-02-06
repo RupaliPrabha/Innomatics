@@ -388,10 +388,10 @@ footer p:hover {
 
   .hero-content {
     padding-left: 0rem;
-    padding-top: 1rem;
+    padding-top: 3rem;
     font-size: 15px;
     text-align: center;
-    gap: 16px;
+    gap: 18px;
   }
 
   .button {
@@ -412,8 +412,7 @@ footer p:hover {
     padding: 1rem;
   }
   .About__div {
-    margin: 0px;
-    
+    margin: 0px; 
     flex-direction: column-reverse;
     gap: 15px;
   }
