@@ -382,13 +382,13 @@ footer p:hover {
   }
 
   .hero-section {
-    height: 49vh;
+    height: 40vh;
     background-position: center;
   }
 
   .hero-content {
-    padding-left: 0rem;
-    padding-top: 3rem;
+    padding-left: 1rem;
+    padding-top: 2.4rem;
     font-size: 15px;
     text-align: center;
     gap: 18px;
