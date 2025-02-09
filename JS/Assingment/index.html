@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/JS/Assingment/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="#ATM">ATM</a>
+            <a href="#Online"> Online Shooping </a>
+            <a href="#Student">Student Grading Sysytem</a>
+            <a href="#Traffic">Smart Traffic Light System</a>
+            <a href="#Movie"> Book Movie Ticket </a>
+            <a href="#Job">Job Application Filter</a>
+            <a href="#E-commerce">E-commerce Coupon Redemption</a>
+            <a href="#Fitness">Fitness Membership Plan</a>
+            <a href="#Electricity">Electricity Bill Calculator</a>
+            <a href="#Flight">Flight Ticket Booking System</a>
+        </nav>
+    </header>
+
+
+    <section id="ATM">
+        <h2>ATM Withdrawal</h2>
+        <form onsubmit="atmWithdrawal(event)">
+
+            <label for="pin">Set PIN:</label>
+            <input type="number" id="pin" required placeholder="Enter Your Four digit PIN"><br>
+
+            <label for="pin">Enter PIN:</label>
+            <input type="number" id="Enterpin" required placeholder="Enter Your Four digit PIN"><br>
+
+            <label for="balance">Enter Balance:</label>
+            <input type="number" id="balance" required placeholder="Enter your Balance"><br>
+
+            <label for="amount">Enter Amount:</label>
+            <input type="number" id="amount" required placeholder="Enter your Amount"><br>
+            <button type="submit">Withdraw</button>
+
+        </form>
+        <p id="withdraw"></p>
+    </section>
+
+    <section id="Online">
+        <h1> Online Shopping Discount & Free Shipping</h1>
+
+        <ul>Discount Available!
+            <li>20% for orders above $1000</li>
+            <li>10% for orders between $500 and $1000</li>
+            <li>No discount below $500</li>
+
+        </ul>
+
+        <ul>Shipping Charges
+            <li>Free shipping for orders above $50</li>
+            <li>shipping ($10) for all orders below $50
+            </li>
+        </ul><br>
+
+        <form onsubmit="calculateFinalAmount(event)">
+            <label for="order">Order : </label>
+            <input type="number" id="orders" required placeholder="Eneter your order Amount"><br>
+            <button type="submit"> Buy Now</button>
+        </form><br>
+
+
+        <label>discount Amount : </label><span id="discountAmount">$0.00</span><br><br>
+
+        <label>shipping Amount : </label><span id="shippingCharge">$0.00</span><br><br>
+        <label>Final Amount : </label><span id="finalAmount">$0.00</span><br><br>
+
+    </section>
+
+
+    <!-- //ques3 -->
+    <section id="Student">
+        <h1>Student Grading System with Extra Credit</h1>
+        <ul>
+            <li>Grading:</li>
+            <ul>
+                <li>90+ → "A"</li>
+                <li>80-89 → "B"</li>
+                <li>70-79 → "C"</li>
+                <li>60-69 → "D"</li>
+                <li>Below 60 → "F"</li>
+
+            </ul>
+
+            <li>If attendance is above 90%, add 5 extra marks</li>
+
+
+
+        </ul>
+        <form onsubmit="calculateGrade(event)">
+            <label for="marks">Enter your Total Marks out of 100 :</label> <input type="number" min="0" max="100"
+                required id="marks" placeholder="NA"> <br>
+
+            <label for="attendance">Enter your Attendance : </label> <input type="number" min="0" max="100"
+                id="attendance" placeholder="NA"><br>
+            <button type="submit">Calculate</button>
+
+        </form> <br>
+        <label>Final Grade: </label><span id="grade">N/A</span><br><br>
+
+    </section>
+
+
+    <!-- ques4 -->
+
+    <section id="Traffic">
+        <h1>Smart Traffic Light System
+        </h1>
+        <ul>
+            <li>"Heavy Traffic" → Green for 60 seconds</li>
+            <li> "Moderate Traffic" → Green for 40 seconds</li>
+            <li> "Light Traffic" → Green for 20 seconds</li>
+        </ul>
+        <form>
+            Traffic Density:
+            <select onchange="trafficLightControl()" name="trafficDensity" id="density">
+
+                <option value="Not Selected">Not Selected</option>
+                <option value="Heavy Traffic">Heavy Traffic</option>
+                <option value="Moderate Traffic">Moderate Traffic</option>
+                <option value="Light Traffic">Light Traffic</option>
+            </select><br>
+            <div><input id="60" name="radio" type="radio">Green for 60 seconds</div>
+            <div><input id="40" name="radio" type="radio"> Green for 40 seconds</div>
+            <div><input id="20" name="radio" type="radio">Green for 20 seconds</div>
+
+
+        </form>
+    </section>
+
+
+    <!-- ques5 -->
+    <section id="Movie">
+        <h1>Movie Ticket Pricing with Time and Age Discount</h1>
+        <ul>
+            <li>Standard price: $12</li>
+            <li> Matinee show (before 5 PM) → 20% discount</li>
+            <li> Senior citizens (above 60) → 30% discount</li>
+            <li> Children (below 12) → 40% discount</li>
+        </ul>
+
+        <form onsubmit="calculateTicketPrice(event)">
+            <label for="ages">Age:</label><input id="ages" required type="number" placeholder="Eneter your age"><br>
+            <label for="time">Time:</label><input type="time" required id="time" placeholder="Enetr Time"><br>
+
+            <button type="submit">Book</button><br>
+
+            <label for="Final Price ">Final Price: $</label><span id="final"></span>
+
+        </form>
+
+
+    </section>
+
+
+    <!-- question6 -->
+    <section id="Job">
+        <h1>Job Application Filter</h1>
+        <ul>
+            <li>Age must be between 21 and 55</li>
+            <li> Experience must be at least 2 years</li>
+            <li> Minimum qualification: "Bachelor's Degree"</li>
+        </ul>
+        <form onsubmit="isEligibleForJob(event)">
+            <label for="age">Age: </label><input id="age" min="1" max="100" required type="number"
+                placeholder="Enter you age"><br><br>
+            <label for="experience">Experience: </label><input id="experience" min="0" max="50" type="number"
+                placeholder="Eneter your experience"><br><br>
+            Minimum qualification:
+            <select name="qualification" id="study">
+                <option value="Select">Select</option>
+                <option value="10th standard">10th standard</option>
+                <option value="12th standard">12th standard</option>
+                <option value="Bachelor's Degree">Bachelor's Degree</option>
+            </select><br><br>
+            <button type="submit">Submit</button>
+        </form>
+
+        <h4 id="eligible"></h4>
+
+    </section>
+
+
+    <!-- question7 -->
+    <section id="E-commerce">
+        <h1> E-commerce Coupon Redemption</h1>
+        <ul>
+            <li>Coupon "DISCOUNT10" → 10% off for orders above $500</li>
+            <li> Coupon "FREESHIP" → Free shipping for orders above $200</li>
+            <li>Both coupons cannot be used together</li>
+
+        </ul>
+        <form onsubmit="applyCoupon(event)">
+
+            <label for="totalOrder"> Total Order: </label><input type="number" required min="0" id="totalOrder"><br><br>
+            Apply Coupon: <select name="" id="coupons">
+                <option value="select">select</option>
+                <option value="DISCOUNT10">DISCOUNT10</option>
+                <option value="FREESHIP">FREESHIP</option>
+
+            </select><br><br>
+            <button type="submit">Buy</button>
+
+        </form>
+        <h3 id="cart">$0.00</h3>
+
+    </section>
+
+
+    <!-- question8 -->
+
+    <section id="Fitness">
+        <h1>Fitness Membership Plan</h1>
+        <ul>
+            <li>Basic ($20/month) → Only gym access
+            </li>
+            <li>Premium ($50/month) → Gym + Personal Trainer
+            </li>
+            <li>
+                VIP ($80/month) → Gym + Trainer + Diet Plan
+
+            </li>
+        </ul>
+
+
+        <form onsubmit="choosePlan(event)">
+            Choose Plan: <select name="choose" id="plan">
+                <option value="NoPlan">No Plan choose</option>
+                <option value="Basic">Basic ($20/month) → Only gym access</option>
+                <option value="Premium">Premium ($50/month) → Gym + Personal Trainer</option>
+                <option value="VIP">VIP ($80/month) → Gym + Trainer + Diet Plan</option>
+            </select>
+
+            <div><input type="checkbox" name="personal" id="trainer">Personal Trainer</div>
+            <div><input type="checkbox" name="diet Plan " id="diet">Diet Plan </div>
+            <button type="submit">Recommend Plan</button>
+        </form>
+        <p id="finalPlan"></p>
+    </section>
+
+
+    <!-- //ques9 -->
+    <section id="Electricity">
+        <h1>Electricity Bill Calculation with Peak Hours
+        </h1>
+        <ul>
+            <li>Normal hours (8 AM - 8 PM) </li>
+            <ul>
+                <li>Below 100 units → $5 per unit</li>
+                <li>100-300 units → $4 per unit</li>
+                <li> Above 300 units → $3 per unit</li>
+            </ul>
+            <li>Peak hours (8 PM - 8 AM) → Extra 10% charge on all rates</li>
+        </ul>
+
+        <form onsubmit="calculateElectricityBill(event)">
+            <label for="Time">Time: </label><input type="time" id="Time" required><br>
+            <label for="unit">Unit: </label><input type="number" id="unit" min="0" placeholder="Enter Units"><br>
+            <button type="submit">Calculate</button>
+        </form> <br>
+
+        <label for="calculate">Final Bill: </label><span id="calculate">$0.00</span>
+    </section>
+
+
+    <!-- ques10 -->
+    <section id="Flight">
+        <h1>Flight Ticket Booking System</h1>
+        <ul>
+            <li>Base fare: $300 </li>
+            <li> Additional charges:
+                <ul>
+                    <li>Business class: +$200</li>
+                    <li>First class: +$500</li>
+                    <li>Luggage over 20kg: +$50 per 10kg extra</li>
+                </ul>
+            <li> Discounts:
+                <ul>
+                    <li>Students → 15% off</li>
+                    <li>Seniors (above 60 years old) → 10% off</li>
+                </ul>
+            </li>
+            </li>
+            </li>
+        </ul>
+        <form onsubmit="calculateFlightFare(event)">
+            Choose Type: <select name="" id="class">
+                <option value="select">select</option>
+                <option value="Buisness">Buisness Class (+$200)</option>
+                <option value="First">First Class (+$500)</option>
+            </select><br>
+            <label for="yourAge">Age: </label><input type="number" id="yourAge" min="1" placeholder="Enter Your Age "
+                required><br>
+            <label for="luggage">Luggage Weight(kg): </label><input type="number" required id="luggage" min="1"
+                placeholder="Enetr your luggage weight"><br>
+            <div><input type="checkbox" id="student"> Student</div>
+
+            <button type="submit">Check Fare</button>
+
+        </form>
+
+        <h3 id="finalPrice"></h3>
+    </section>
+
+
+    <script src="./index.js"></script>
+
+</body>
+
+</html>
