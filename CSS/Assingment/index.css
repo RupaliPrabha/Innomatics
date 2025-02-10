@@ -131,7 +131,7 @@ img {
   align-items: center;
   gap: 20px;
   padding: 3rem;
-  /* font-size: 25px; */
+  
   background-color: #faf2f2b7;
 }
 .About__div {
@@ -206,7 +206,6 @@ footer p:hover {
   text-decoration: underline;
 }
 
-/* Tablets and smaller screens */
 @media (max-width: 1024px) {
   nav {
     flex-direction: column;
@@ -279,7 +278,6 @@ footer p:hover {
   }
 }
 
-/* Mobile devices */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
@@ -360,7 +358,6 @@ footer p:hover {
   }
 }
 
-/* Small mobile devices */
 @media (max-width: 480px) {
   nav {
     flex-direction: column;
