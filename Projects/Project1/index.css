@@ -108,6 +108,7 @@
     list-style: none;
     gap: 15px;
     margin-bottom: 0;
+    /* align-items: center; */
     padding-left: 0;
   }
 
