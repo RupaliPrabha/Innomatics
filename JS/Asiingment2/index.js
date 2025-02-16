@@ -31,7 +31,7 @@ function dispalyCard(products = menuData) {
         <div class="card">
             <img src=${product.image} alt=${product.name}/>
             <h2> ${product.name}</h2>
-             <p>Price: ₹${product.price}</p> 
+             <p>Price: ₹${product.price.toFixed(2)}</p> 
             <p>${product.description}</p>  
             <button onclick="addToOrder(${product.id})"> Add To Cart </button>
             </div>
@@ -103,7 +103,6 @@ function calculateTotal() {
   let total = 0;
   const order = JSON.parse(localStorage.getItem("Order"));
   if (order && order?.items?.length > 0) {
-    console.log("this is triggered")
     order?.items?.forEach((item) => {
       total += item.price * item.quantity;
     });
@@ -122,7 +121,7 @@ function iteminit() {
 
 function updateOrderDisplay() {
   const orderDisplay = document.getElementById("orderDisplay");
-  const total = document.getElementById("totalPrice")
+  const total = document.getElementById("totalPrice");
   const order = JSON.parse(localStorage.getItem("Order"));
   if (!order?.items?.length) {
     orderDisplay.innerHTML = "<li>Your Order is empty!</li>";
@@ -151,7 +150,7 @@ function updateOrderDisplay() {
 
     orderDisplay.innerHTML = orderHtml;
   }
-  total.innerHTML = calculateTotal() 
+  total.innerHTML = calculateTotal().toFixed(2);
   cartCount();
 }
 
@@ -167,12 +166,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const cartIcon = document.querySelector(".cart-icon");
   const closeCart = document.querySelector("#sideCart h2 i");
 
-  const clearCartButton = document.getElementById("clearAll");
-
-  clearCartButton.addEventListener("click", function () {
-    Order.removeAll();
-  });
-
   cartIcon.addEventListener("click", () => {
     cartSection.classList.toggle("active");
   });
@@ -183,6 +176,18 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  const clearCartButton = document.getElementById("clearAll");
+
+  clearCartButton.addEventListener("click", function () {
+    const order = JSON.parse(localStorage.getItem("Order"));
+
+    if (!order?.items?.length) {
+      alert("Your cart is already Empty!");
+    } else {
+      Order.removeAll();
+    }
+  });
+
   const categoryLinks = document.querySelectorAll(".dropdown-menu a");
 
   categoryLinks.forEach((link) => {
@@ -197,3 +202,50 @@ document.addEventListener("DOMContentLoaded", function () {
   fetchData();
 });
 
+document.getElementById("checkOut").addEventListener("click", function () {
+  if (!Order?.items?.length) {
+    alert("First add the product in cart !");
+  } else {
+    showCheckoutModal();
+  }
+});
+
+document.getElementById("confirmOrder").addEventListener("click", function () {
+  confirmOrder();
+});
+
+document.getElementById("closeModal").addEventListener("click", function () {
+  document.getElementById("checkoutModal").classList.remove("active");
+});
+
+function showCheckoutModal() {
+  const checkoutModal = document.getElementById("checkoutModal");
+  const checkoutItems = document.getElementById("checkoutItems");
+  const checkoutTotal = document.getElementById("checkoutTotal");
+
+  const order = JSON.parse(localStorage.getItem("Order"));
+
+  if (!order?.items?.length) {
+    checkoutItems.innerHTML = "<li>Your cart is empty!</li>";
+  } else {
+    let orderHtml = "";
+    order?.items?.forEach((item) => {
+      orderHtml += `
+          <li>
+            ${item.name} -> ₹${item.price} x ${item.quantity} = ₹${(
+        item.price * item.quantity
+      ).toFixed(2)}
+          </li>`;
+    });
+    checkoutItems.innerHTML = orderHtml;
+  }
+
+  checkoutTotal.textContent = calculateTotal().toFixed(2);
+  checkoutModal.classList.add("active");
+}
+
+function confirmOrder() {
+  alert("  Thankyou for shooping with us :) Your order has been confirmed ✅!");
+  Order.removeAll();
+  document.getElementById("checkoutModal").classList.remove("active");
+}
