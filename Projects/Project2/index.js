@@ -3,6 +3,9 @@ const categories = {
   animals: ["🐶", "🐱", "🦊", "🐼", "🐻", "🐰", "🦁", "🐸"],
   emojis: ["😀", "😂", "😍", "😎", "🤩", "😡", "🥶", "😴"],
   planets: ["🪐", "🌍", "🌕", "🌞", "🌑", "🌟", "☄️", "🌙"],
+  flowers:["🪻","🌷","🌼","🌻","🌺","🌹","🪷","🌸"],
+  flags:["🏁","🏳️","🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏳️‍🌈","🎌","🏳️‍⚧️","🚩","⛳"]
+  
 };
 
 let timerElemt = document.getElementById("timer");
@@ -60,7 +63,7 @@ function flipCard() {
   flippedCards.push(card);
 
   if (flippedCards.length === 2) {
-    setTimeout(checkMatch, 500);
+    setTimeout(checkMatch, 800);
   }
 
  
@@ -119,7 +122,7 @@ function showResult(message) {
   resultConatiner.innerHTML = `<h2>${message}</h2>
   <p>Time left: ${timeLeft} sec | Score: ${score}</p>
    <button onclick="playAgain()">Play Again </button>
-    <button  onclick="restartGame()">Restart</button>`;
+    <button  onclick="restartGame()">Home</button>`;
 
   resultConatiner.classList.remove("hidden");
   document.getElementById("game-container").classList.add("hidden");
