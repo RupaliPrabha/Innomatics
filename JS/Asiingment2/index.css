@@ -60,16 +60,17 @@ nav {
 
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 #productCards {
   display: flex;
   flex-wrap: wrap;
-
   gap: 20px;
   padding: 40px 20px;
   background-color: #fbe7f1;
 }
+
+
 
 .card {
   background: linear-gradient(135deg, #d8bfd8, #ffb6c1);
@@ -146,6 +147,7 @@ nav {
 
 .cart-section.active {
   right: 0;
+  
 }
 
 #sideCart h2 {

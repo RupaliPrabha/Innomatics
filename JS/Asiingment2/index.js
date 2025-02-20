@@ -24,7 +24,7 @@ function filterByCategory(category) {
 }
 
 function dispalyCard(products = menuData) {
-  const foodCard = document.getElementById("productCards");
+  const productCard = document.getElementById("productCards");
   let cardHtml = "";
   products.forEach((product) => {
     cardHtml += `
@@ -38,7 +38,7 @@ function dispalyCard(products = menuData) {
         `;
   });
 
-  foodCard.innerHTML = cardHtml;
+  productCard.innerHTML = cardHtml;
 }
 function addToOrder(id) {
   const item = menuData.find((product) => product.id === id);
@@ -167,11 +167,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeCart = document.querySelector("#sideCart h2 i");
 
   cartIcon.addEventListener("click", () => {
+    // document.querySelector(".container").style.justifyContent="start";
     cartSection.classList.toggle("active");
   });
 
   closeCart.addEventListener("click", () => {
     cartSection.classList.remove("active");
+    // document.querySelector(".container").style.justifyContent="center";
   });
 });
 
