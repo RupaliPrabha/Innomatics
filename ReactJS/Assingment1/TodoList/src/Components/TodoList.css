@@ -142,7 +142,7 @@ input[type="text"] {
 }
 @media (max-width: 1024px) {
   .todo-container {
-    width: 60vw;
+    width: 46vw;
   }
   .tagline {
     font-size: 35px;
@@ -166,6 +166,10 @@ input[type="text"] {
 }
 
 @media (max-width: 480px) {
+  body{
+    background: url("https://marketplace.canva.com/EAGEbkzSGHo/1/0/900w/canva-blue-and-white-aesthetic-paper-background-instagram-story-KdESO6xoQ8k.jpg") no-repeat center center/cover;
+  }
+ 
   .todo-container {
     width: 90vw;
     font-size: 16px;
@@ -177,6 +181,11 @@ input[type="text"] {
 }
 
 @media (max-width: 360px) {
+
+  body{
+    background: url("https://marketplace.canva.com/EAGEbkzSGHo/1/0/900w/canva-blue-and-white-aesthetic-paper-background-instagram-story-KdESO6xoQ8k.jpg") no-repeat center center/cover;
+  }
+ 
   .todo-container {
     width: 78vw;
     font-size: 20px;
