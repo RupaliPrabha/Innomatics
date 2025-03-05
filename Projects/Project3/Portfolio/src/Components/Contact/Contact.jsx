@@ -76,6 +76,7 @@ const Contact = () => {
         <form onSubmit={onSubmit} className="contact_right">
           <label htmlFor="name">Your Name</label>
           <input
+            required
             type="text"
             placeholder="Enter your name"
             name="name"
@@ -83,6 +84,7 @@ const Contact = () => {
           />
           <label htmlFor="email">Your Email</label>
           <input
+            required
             type="text"
             placeholder="enter your email"
             name="email"
@@ -90,6 +92,7 @@ const Contact = () => {
           />
           <label htmlFor="message">Write your message here</label>
           <textarea
+            required
             name="message"
             rows="4"
             placeholder="Enter your message"
