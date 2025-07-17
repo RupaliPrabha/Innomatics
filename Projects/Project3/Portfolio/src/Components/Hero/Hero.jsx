@@ -4,10 +4,10 @@ import profile from "../../assets/rupali_profile.jpg";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 const Hero = () => {
   const handleDownload = () => {
-    const resumeUrl = "/Resume.pdf";
+    const resumeUrl = "/Rupali-Prabha-Resume.pdf";
     const link = document.createElement("a");
     link.href = resumeUrl;
-    link.setAttribute("download", "My_Resume.pdf");
+    link.setAttribute("download", "Rupali_Resume.pdf");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
